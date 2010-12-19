@@ -1,0 +1,11 @@
+This files are part of my little openframeworks addons.
+
+ofxGlutTimer is simple timer that use the Glut timeout function
+
+tmGuiToo are some personalized controls to be used with ofxSimpleGuiToo (MSAlibs)
+
+tmGuiTooOsc is simple bridge between ofxSimpleGuiToo and ofxOsc
+
+tmOpenCv are some extensions to ofxOpenCv
+
+tmUtils are some basic classes a didn't found somewhere else
