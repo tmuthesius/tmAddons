@@ -7,22 +7,22 @@
  *
  */
 
-#include "tmGuiTooOsc.h"
+#include "ofxGuiTooOsc.h"
 
-void tmGuiTooOsc::setup(int inPort, string outHost, int outPort){
+void ofxGuiTooOsc::setup(int inPort, string outHost, int outPort){
 	oscIn.setup(inPort);
 	oscOut.setup(outHost, outPort);
 	shoudUpdate = false;
 }
 
-void tmGuiTooOsc::add(ofxSimpleGuiControl &control, const string address){
-	tmGuiTooOscElm e;
+void ofxGuiTooOsc::add(ofxSimpleGuiControl &control, const string address){
+	ofxGuiTooOscElm e;
 	e.control = &control;
 	e.address = address;
 	list.push_back(e);
 }
 
-void tmGuiTooOsc::update(){
+void ofxGuiTooOsc::update(){
 	
 	unusedMessages.clear();
 	ofxOscMessage mess;
@@ -36,7 +36,7 @@ void tmGuiTooOsc::update(){
 	
 	
 	for (int i=0; i < list.size(); i++) {
-		tmGuiTooOscElm &e = list[i];
+		ofxGuiTooOscElm &e = list[i];
 		if(e.control->controlType == "SliderInt"){
 			ofxSimpleGuiSliderInt *c = (ofxSimpleGuiSliderInt*) e.control;
 			if(c->oldValue != c->targetValue || shoudUpdate) {
@@ -61,11 +61,11 @@ void tmGuiTooOsc::update(){
 }
 
 
-bool tmGuiTooOsc::processMessage(ofxOscMessage &mess){
+bool ofxGuiTooOsc::processMessage(ofxOscMessage &mess){
 	string addr = mess.getAddress();
 	for (int i=0; i < list.size(); i++) {
 		if(list[i].address == addr){
-			tmGuiTooOscElm &e = list[i];
+			ofxGuiTooOscElm &e = list[i];
 			
 			if(e.control->controlType == "SliderInt"){
 				ofxSimpleGuiSliderInt *c = (ofxSimpleGuiSliderInt*) e.control;

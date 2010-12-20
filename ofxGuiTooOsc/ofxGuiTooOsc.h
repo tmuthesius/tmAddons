@@ -14,16 +14,16 @@
 #include "ofxSimpleGuiToo.h"
 
 
-struct tmGuiTooOscElm {
+struct ofxGuiTooOscElm {
 	ofxSimpleGuiControl *control;
 	string address;
 };
 
 
-class tmGuiTooOsc{
+class ofxGuiTooOsc{
 public:
-	tmGuiTooOsc(){}
-	tmGuiTooOsc(int inPort, string outHost, int outPort){
+	ofxGuiTooOsc(){}
+	ofxGuiTooOsc(int inPort, string outHost, int outPort){
 		setup(inPort, outHost, outPort);
 	}
 	
@@ -39,7 +39,7 @@ public:
 protected:
 	bool processMessage(ofxOscMessage &mess);
 	
-	vector<tmGuiTooOscElm> list;
+	vector<ofxGuiTooOscElm> list;
 	ofxOscReceiver oscIn;
 	ofxOscSender oscOut;
 	bool shoudUpdate;
