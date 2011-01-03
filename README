@@ -2,7 +2,7 @@ This files are part of my little openframeworks addons.
 
 - ofxGlutTimer is simple timer that use the Glut timeout function
 - ofxGuiTooOsc is simple bridge between ofxSimpleGuiToo and ofxOsc
-- ofxUVCVideoGrabber lets you capture video from an UVC camera on OSX and adjust the camera settings (exposure, white balance, É). It's based on ofxQTKitVideoGrabber and PhobosLab's UVC Camera Control class.
+- ofxUVCVideoGrabber lets you capture video from an UVC camera on OSX and adjust the camera settings (exposure, white balance, ...). It's based on ofxQTKitVideoGrabber and PhobosLab's UVC Camera Control class.
 
 - tmGuiToo are some personalized controls to be used with ofxSimpleGuiToo (MSAlibs)
 - tmOpenCv are some extensions to ofxOpenCv
